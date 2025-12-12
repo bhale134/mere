@@ -342,7 +342,64 @@
             background-color: var(--secondary-color);
             transform: translateY(-3px);
         }
-        
+        .gallery-stacks {
+    padding: 40px 0;
+}
+.stacks-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+.stack {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    cursor: pointer;
+    transition: transform .3s;
+}
+.stack:hover { transform: scale(1.05); }
+
+.stack img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+.top-img { transform: rotate(0deg); }
+.mid-img { transform: rotate(-5deg); top: 8px; }
+.bottom-img { transform: rotate(5deg); top: 16px; }
+
+.grid.hidden { display: none; }
+.grid {
+    margin-top: 40px;
+    text-align: center;
+    justify-content: center;
+    padding: 10% 10%;
+}
+#close-grid {
+    padding: 8px 16px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+#grid-images {
+
+     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 14px;
+    padding: 10px;
+}
+#grid-images img {
+width: 100%;
+    aspect-ratio: 1 / 1;   /* Force le carré */
+    object-fit: cover;      /* Pour remplir proprement */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform .25s ease;
+}
+
+
         .footer-bottom {
             text-align: center;
             padding-top: 20px;
@@ -384,7 +441,7 @@
     <!-- Header -->
     <header>
         <div class="container nav-container">
-            <div class="logo"><i class="fas fa-leaf"></i> Mère Gage du Vert</div>
+            <div class="logo"><img src="LOGO MGV.png" alt="" width="50" height="50"> ONG Mère Gage du Vert</div>
             <ul class="nav-menu">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#a-propos">À propos</a></li>
@@ -398,7 +455,7 @@
     <!-- Hero Section -->
     <section class="hero" id="accueil">
         <div class="container hero-content">
-            <h1>Mère Gage du Vert</h1>
+            <h1>ONG Mère Gage du Vert</h1>
             <p>Reconnaître le travail acharné, l'innovation et le leadership des femmes entrepreneures œuvrant dans le secteur vert en Côte d'Ivoire.</p>
             <a href="#objectifs" class="btn">Découvrir nos objectifs</a>
         </div>
@@ -415,7 +472,7 @@
                     <p>Notre mission est de créer un réseau solide de femmes leaders environnementales qui œuvrent pour un avenir plus vert et durable pour la Côte d'Ivoire.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://img.freepik.com/photos-gratuite/benevoles-petit-enfant-plantent-arbre-couvrent-trou-dans-sol_482257-91057.jpg?semt=ais_hybrid&w=740" alt="Femmes entrepreneures dans l'agriculture durable">
+                    <img src="ob.jpeg" alt="Femmes entrepreneures dans l'agriculture durable">
                 </div>
             </div>
         </div>
@@ -466,25 +523,39 @@
     </section>
 
     <!-- Gallery Section -->
-    <section class="gallery" id="galerie">
-        <div class="container">
-            <h2 class="section-title">Nos actions en images</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1621351183012-e2f9972dd9bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Femmes dans l'agriculture durable">
-                    <div class="gallery-caption">Formation aux techniques agricoles durables</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUJBcvznHqLZQCfnh8on2GmjzNaMLkr7OBug&s" alt="Plantation d'arbres">
-                    <div class="gallery-caption">Campagne de reboisement communautaire</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://www.yves-rocher-fondation.org/wp-content/uploads/ruhama-getahun-femme-engage%CC%81e-pour-la-reforestation-en-ethiopie-Copie-1500x996.jpg" alt="Atelier de formation">
-                    <div class="gallery-caption">Atelier de formation sur les pratiques écologiques</div>
-                </div>
-            </div>
+    <section id="gallery-stacks" class="gallery-stacks">
+    <h2 class="section-title text-center">Galerie Interactive</h2>
+
+    <div class="stacks-container">
+
+        <!-- Lot 1 (paysages voyages) -->
+        <div class="stack" data-stack="1">
+            <img src="https://img.freepik.com/photos-gratuite/deux-arbres-bruns_395237-252.jpg?semt=ais_hybrid&w=740&q=80" class="top-img">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV_JhNkaK5QGh1zWiHRiv8cB7BZbmaaUlCeA&s" class="mid-img">
+            <img src="https://www.linfodurable.fr/sites/linfodurable/files/styles/share/public/2022-04/tree-gb4fb0218f_640.jpg?itok=UD3qzNlP" class="bottom-img">
         </div>
-    </section>
+
+        <!-- Lot 2 (nature & paysages) -->
+        <div class="stack" data-stack="2">
+            <img src="https://pixabay.com/get/ge41e22bc2baed9e290370a4bb62c0ea617d6710288f36f8dcbf82076a74c07a2_640.jpg" class="top-img">
+            <img src="https://pixabay.com/get/g6c6dd1c93a3b0ffccfb871406fea82409e2aebe119571e3b156d8e7ec668684f_640.jpg" class="mid-img">
+            <img src="https://pixabay.com/get/gec183b0bb5f46e51df53f9b8db0f4ad7c7831584b239b1a35bb83d08d91166f7_640.jpg" class="bottom-img">
+        </div>
+
+        <!-- Lot 3 (villes & architecture) -->
+        <div class="stack" data-stack="3">
+            <img src="https://pixabay.com/get/gc34692e3cf22c2262fec09a82e2b2549c6398f0a2ce7a4b7a8d1383fa147bbf3_640.jpg" class="top-img">
+            <img src="https://pixabay.com/get/gfb84f5b657af9829d7e89ab4825f4032406de40109d065e48632934cc1d14128_640.jpg" class="mid-img">
+            <img src="https://pixabay.com/get/g8a57cf3655f28c7bb399f13aaa009f0adf2c50f3a94d7c4bcfee8d8af3577c97_640.jpg" class="bottom-img">
+        </div>
+
+    </div>
+
+    <div id="grid-view" class="grid hidden">
+        <button id="close-grid">Fermer</button>
+        <div id="grid-images"></div>
+    </div>
+</section>
 
     <!-- Impact Section -->
     <section class="impact">
@@ -541,6 +612,56 @@
             </div>
         </div>
     </footer>
+<script>
+const imageSets = {
+    1: [
+        "https://img.freepik.com/photos-gratuite/deux-arbres-bruns_395237-252.jpg?semt=ais_hybrid&w=740&q=80",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV_JhNkaK5QGh1zWiHRiv8cB7BZbmaaUlCeA&s",
+        "https://www.linfodurable.fr/sites/linfodurable/files/styles/share/public/2022-04/tree-gb4fb0218f_640.jpg?itok=UD3qzNlP",
+        
+        "https://pixabay.com/get/g725a76779f1fc0454b0c2ada6663ce1eb57f4a55514bf228b03171038f311fd2_640.jpg",
+        "https://pixabay.com/get/g7d36041746bb2d18cdd21f7c19c19c4af8bb96e18a232469dcbb7b8d30d40be5_640.jpg",
+        "https://pixabay.com/get/gec79faea114809a1fc0c8a66a2eeb55cc50a550178e3e1aa87f0948d00fc8bb6_640.jpg",
+    ],
+    2: [
+        "https://pixabay.com/get/ge41e22bc2baed9e290370a4bb62c0ea617d6710288f36f8dcbf82076a74c07a2_640.jpg",
+        "https://pixabay.com/get/g6c6dd1c93a3b0ffccfb871406fea82409e2aebe119571e3b156d8e7ec668684f_640.jpg",
+        "https://pixabay.com/get/gec183b0bb5f46e51df53f9b8db0f4ad7c7831584b239b1a35bb83d08d91166f7_640.jpg",
+        "https://pixabay.com/get/g3b7b9b78da9b06f7c0ccae7e896209839ffe4d7d6a930fa83a03c3d20d4453c2_640.jpg",
+        "https://pixabay.com/get/g15d657190dd5720374e76b2b86ad1c6f897d9d68b8d9aa3aa63fe1b71bc55aef_640.jpg",
+        "https://pixabay.com/get/g5c42ba1450e759cb614a7ca9343eaac0f017f362f8e2fb437e4c00302fde49b9_640.jpg",
+    ],
+    3: [
+        "https://pixabay.com/get/gc34692e3cf22c2262fec09a82e2b2549c6398f0a2ce7a4b7a8d1383fa147bbf3_640.jpg",
+        "https://pixabay.com/get/gfb84f5b657af9829d7e89ab4825f4032406de40109d065e48632934cc1d14128_640.jpg",
+        "https://pixabay.com/get/g8a57cf3655f28c7bb399f13aaa009f0adf2c50f3a94d7c4bcfee8d8af3577c97_640.jpg",
+        "https://pixabay.com/get/ge1e400a79460cbb3aadcb4cf7b61c83f9eb107eac3eca625ad5b07f31a0c8c5b_640.jpg",
+        "https://pixabay.com/get/gd3732ef9bcd0afb966d82c951d1f9ce55cded42388a2e47c1559a5e6bb9c6f91_640.jpg",
+        "https://pixabay.com/get/g0b50e0b1464b4b8bb8c5e7a4f8d9a2230603b8a2b42e1a43abbdd79b6f4e9b57_640.jpg",
+    ]
+};
+
+document.querySelectorAll(".stack").forEach(stack => {
+    stack.addEventListener("click", () => {
+        const id = stack.getAttribute("data-stack");
+        showGrid(id);
+    });
+});
+
+function showGrid(id) {
+    const grid = document.getElementById("grid-view");
+    const container = document.getElementById("grid-images");
+    container.innerHTML = "";
+    imageSets[id].forEach(img => {
+        container.innerHTML += `<img src="${img}">`;
+    });
+    grid.classList.remove("hidden");
+}
+
+document.getElementById("close-grid").onclick = () => {
+    document.getElementById("grid-view").classList.add("hidden");
+};
+</script>
 
     <script>
         // Animation pour la navigation
