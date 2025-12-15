@@ -1,442 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mère Gage du Vert - Promotion des femmes entrepreneures dans le secteur vert</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Variables et réinitialisation */
-        :root {
-            --primary-color: #2e7d32;
-            --secondary-color: #7cb342;
-            --accent-color: #c5e1a5;
-            --text-color: #333;
-            --light-text: #fff;
-            --background: #f9f9f9;
-            --section-padding: 80px 0;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background);
-        }
-        
-        /* Typographie */
-        h1, h2, h3 {
-            font-weight: 600;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-        
-        p {
-            margin-bottom: 15px;
-        }
-        
-        /* Layout */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        section {
-            padding: var(--section-padding);
-        }
-        
-        /* Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 15px 0;
-            transition: all 0.3s ease;
-        }
-        
-        header.scrolled {
-            padding: 10px 0;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo i {
-            margin-right: 10px;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-menu li {
-            margin-left: 30px;
-        }
-        
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--primary-color);
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1527525443983-6e60c75fff46?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--light-text);
-            text-align: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary-color);
-            color: var(--light-text);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        /* About Section */
-        .about {
-            background-color: #fff;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary-color);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-        
-        /* Objectives Section */
-        .objectives {
-            background-color: #f5f9f2;
-        }
-        
-        .objectives-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .objective-card {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-        }
-        
-        .objective-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .objective-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .objective-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        /* Gallery Section */
-        .gallery {
-            background-color: #fff;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
-            height: 250px;
-            position: relative;
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-            color: white;
-            padding: 20px 15px 15px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .gallery-item:hover .gallery-caption {
-            opacity: 1;
-        }
-        
-        /* Impact Section */
-        .impact {
-            background-color: #f5f9f2;
-            text-align: center;
-        }
-        
-        .stats-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        
-        .stat {
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            min-width: 200px;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        .stat-text {
-            font-weight: 500;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            padding: 50px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-section h3 {
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--light-text);
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        .gallery-stacks {
-    padding: 40px 0;
-}
-.stacks-container {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-}
-.stack {
-    position: relative;
-    width: 180px;
-    height: 180px;
-    cursor: pointer;
-    transition: transform .3s;
-}
-.stack:hover { transform: scale(1.05); }
-
-.stack img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
-.top-img { transform: rotate(0deg); }
-.mid-img { transform: rotate(-5deg); top: 8px; }
-.bottom-img { transform: rotate(5deg); top: 16px; }
-
-.grid.hidden { display: none; }
-.grid {
-    margin-top: 40px;
-    text-align: center;
-    justify-content: center;
-    padding: 10% 10%;
-}
-#close-grid {
-    padding: 8px 16px;
-    margin-bottom: 15px;
-    cursor: pointer;
-}
-#grid-images {
-
-     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-    gap: 14px;
-    padding: 10px;
-}
-#grid-images img {
-width: 100%;
-    aspect-ratio: 1 / 1;   /* Force le carré */
-    object-fit: cover;      /* Pour remplir proprement */
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: transform .25s ease;
-}
-
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Responsive */
-        @media (max-width: 968px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-image {
-                order: -1;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .stats-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -456,7 +28,8 @@ width: 100%;
     <section class="hero" id="accueil">
         <div class="container hero-content">
             <h1>ONG Mère Gage du Vert</h1>
-            <p>Reconnaître le travail acharné, l'innovation et le leadership des femmes entrepreneures œuvrant dans le secteur vert en Côte d'Ivoire.</p>
+            <p>Reconnaître le travail acharné, l'innovation et le leadership des femmes entrepreneures œuvrant dans le
+                secteur vert en Côte d'Ivoire.</p>
             <a href="#objectifs" class="btn">Découvrir nos objectifs</a>
         </div>
     </section>
@@ -467,9 +40,13 @@ width: 100%;
             <h2 class="section-title">À propos de notre initiative</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Mère Gage du Vert est une initiative visant à mettre en lumière et soutenir les femmes entrepreneures qui contribuent activement au développement durable et à la protection de l'environnement en Côte d'Ivoire.</p>
-                    <p>Nous croyons en la puissance de l'entrepreneuriat féminin vert comme levier de changement et d'inspiration pour les générations futures.</p>
-                    <p>Notre mission est de créer un réseau solide de femmes leaders environnementales qui œuvrent pour un avenir plus vert et durable pour la Côte d'Ivoire.</p>
+                    <p>Mère Gage du Vert est une initiative visant à mettre en lumière et soutenir les femmes
+                        entrepreneures qui contribuent activement au développement durable et à la protection de
+                        l'environnement en Côte d'Ivoire.</p>
+                    <p>Nous croyons en la puissance de l'entrepreneuriat féminin vert comme levier de changement et
+                        d'inspiration pour les générations futures.</p>
+                    <p>Notre mission est de créer un réseau solide de femmes leaders environnementales qui œuvrent pour
+                        un avenir plus vert et durable pour la Côte d'Ivoire.</p>
                 </div>
                 <div class="about-image">
                     <img src="ob.jpeg" alt="Femmes entrepreneures dans l'agriculture durable">
@@ -488,35 +65,40 @@ width: 100%;
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Prévention environnementale</h3>
-                    <p>Contribuer à anticiper sur la prévention environnementale grâce à des actions concrètes et innovantes.</p>
+                    <p>Contribuer à anticiper sur la prévention environnementale grâce à des actions concrètes et
+                        innovantes.</p>
                 </div>
                 <div class="objective-card">
                     <div class="objective-icon">
                         <i class="fas fa-seedling"></i>
                     </div>
                     <h3>Transmission des valeurs</h3>
-                    <p>Contribuer à transmettre aux femmes les valeurs environnementales essentielles pour un avenir durable.</p>
+                    <p>Contribuer à transmettre aux femmes les valeurs environnementales essentielles pour un avenir
+                        durable.</p>
                 </div>
                 <div class="objective-card">
                     <div class="objective-icon">
                         <i class="fas fa-book-open"></i>
                     </div>
                     <h3>Savoir-faire environnemental</h3>
-                    <p>Transmettre aux femmes le savoir-faire environnemental nécessaire pour exceller dans le secteur vert.</p>
+                    <p>Transmettre aux femmes le savoir-faire environnemental nécessaire pour exceller dans le secteur
+                        vert.</p>
                 </div>
                 <div class="objective-card">
                     <div class="objective-icon">
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <h3>Élargissement du réseau</h3>
-                    <p>Procéder à l'élargissement du réseau en incitant les femmes, particulièrement les jeunes filles, à intégrer le réseau.</p>
+                    <p>Procéder à l'élargissement du réseau en incitant les femmes, particulièrement les jeunes filles,
+                        à intégrer le réseau.</p>
                 </div>
                 <div class="objective-card">
                     <div class="objective-icon">
                         <i class="fas fa-hands-helping"></i>
                     </div>
                     <h3>Mentorat environnemental</h3>
-                    <p>Élargir le réseau de mentorat environnemental en faveur des jeunes filles acquises à la cause de la protection environnementale.</p>
+                    <p>Élargir le réseau de mentorat environnemental en faveur des jeunes filles acquises à la cause de
+                        la protection environnementale.</p>
                 </div>
             </div>
         </div>
@@ -524,38 +106,38 @@ width: 100%;
 
     <!-- Gallery Section -->
     <section id="gallery-stacks" class="gallery-stacks">
-    <h2 class="section-title text-center">Galerie Interactive</h2>
+        <h2 class="section-title text-center">Galerie Interactive</h2>
 
-    <div class="stacks-container">
+        <div class="stacks-container">
 
-        <!-- Lot 1 (paysages voyages) -->
-        <div class="stack" data-stack="1">
-            <img src="https://img.freepik.com/photos-gratuite/deux-arbres-bruns_395237-252.jpg?semt=ais_hybrid&w=740&q=80" class="top-img">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV_JhNkaK5QGh1zWiHRiv8cB7BZbmaaUlCeA&s" class="mid-img">
-            <img src="https://www.linfodurable.fr/sites/linfodurable/files/styles/share/public/2022-04/tree-gb4fb0218f_640.jpg?itok=UD3qzNlP" class="bottom-img">
+            <!-- Lot 1 (paysages voyages) -->
+            <div class="stack" data-stack="1">
+                <img src="G1_P1.jpeg" class="top-img">
+                <img src="G1_P2.jpeg" class="mid-img">
+                <img src="G1_P3.jpeg" class="bottom-img">
+            </div>
+
+            <!-- Lot 2 (nature & paysages) -->
+            <div class="stack" data-stack="2">
+                <img src="G2_P1.jpeg" class="top-img">
+                <img src="G2_P2.jpeg" class="mid-img">
+                <img src="G2_P3.jpeg" class="bottom-img">
+            </div>
+
+            <!-- Lot 3 (villes & architecture) -->
+            <div class="stack" data-stack="3">
+                <img src="G3_P1.jpeg" class="top-img">
+                <img src="G3_P2.jpeg" class="mid-img">
+                <img src="G3_P3.jpeg" class="bottom-img">
+            </div>
+
         </div>
 
-        <!-- Lot 2 (nature & paysages) -->
-        <div class="stack" data-stack="2">
-            <img src="https://pixabay.com/get/ge41e22bc2baed9e290370a4bb62c0ea617d6710288f36f8dcbf82076a74c07a2_640.jpg" class="top-img">
-            <img src="https://pixabay.com/get/g6c6dd1c93a3b0ffccfb871406fea82409e2aebe119571e3b156d8e7ec668684f_640.jpg" class="mid-img">
-            <img src="https://pixabay.com/get/gec183b0bb5f46e51df53f9b8db0f4ad7c7831584b239b1a35bb83d08d91166f7_640.jpg" class="bottom-img">
+        <div id="grid-view" class="grid hidden">
+            <button id="close-grid">Fermer</button>
+            <div id="grid-images"></div>
         </div>
-
-        <!-- Lot 3 (villes & architecture) -->
-        <div class="stack" data-stack="3">
-            <img src="https://pixabay.com/get/gc34692e3cf22c2262fec09a82e2b2549c6398f0a2ce7a4b7a8d1383fa147bbf3_640.jpg" class="top-img">
-            <img src="https://pixabay.com/get/gfb84f5b657af9829d7e89ab4825f4032406de40109d065e48632934cc1d14128_640.jpg" class="mid-img">
-            <img src="https://pixabay.com/get/g8a57cf3655f28c7bb399f13aaa009f0adf2c50f3a94d7c4bcfee8d8af3577c97_640.jpg" class="bottom-img">
-        </div>
-
-    </div>
-
-    <div id="grid-view" class="grid hidden">
-        <button id="close-grid">Fermer</button>
-        <div id="grid-images"></div>
-    </div>
-</section>
+    </section>
 
     <!-- Impact Section -->
     <section class="impact">
@@ -612,60 +194,88 @@ width: 100%;
             </div>
         </div>
     </footer>
-<script>
-const imageSets = {
-    1: [
-        "https://img.freepik.com/photos-gratuite/deux-arbres-bruns_395237-252.jpg?semt=ais_hybrid&w=740&q=80",
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV_JhNkaK5QGh1zWiHRiv8cB7BZbmaaUlCeA&s",
-        "https://www.linfodurable.fr/sites/linfodurable/files/styles/share/public/2022-04/tree-gb4fb0218f_640.jpg?itok=UD3qzNlP",
-        
-        "https://pixabay.com/get/g725a76779f1fc0454b0c2ada6663ce1eb57f4a55514bf228b03171038f311fd2_640.jpg",
-        "https://pixabay.com/get/g7d36041746bb2d18cdd21f7c19c19c4af8bb96e18a232469dcbb7b8d30d40be5_640.jpg",
-        "https://pixabay.com/get/gec79faea114809a1fc0c8a66a2eeb55cc50a550178e3e1aa87f0948d00fc8bb6_640.jpg",
-    ],
-    2: [
-        "https://pixabay.com/get/ge41e22bc2baed9e290370a4bb62c0ea617d6710288f36f8dcbf82076a74c07a2_640.jpg",
-        "https://pixabay.com/get/g6c6dd1c93a3b0ffccfb871406fea82409e2aebe119571e3b156d8e7ec668684f_640.jpg",
-        "https://pixabay.com/get/gec183b0bb5f46e51df53f9b8db0f4ad7c7831584b239b1a35bb83d08d91166f7_640.jpg",
-        "https://pixabay.com/get/g3b7b9b78da9b06f7c0ccae7e896209839ffe4d7d6a930fa83a03c3d20d4453c2_640.jpg",
-        "https://pixabay.com/get/g15d657190dd5720374e76b2b86ad1c6f897d9d68b8d9aa3aa63fe1b71bc55aef_640.jpg",
-        "https://pixabay.com/get/g5c42ba1450e759cb614a7ca9343eaac0f017f362f8e2fb437e4c00302fde49b9_640.jpg",
-    ],
-    3: [
-        "https://pixabay.com/get/gc34692e3cf22c2262fec09a82e2b2549c6398f0a2ce7a4b7a8d1383fa147bbf3_640.jpg",
-        "https://pixabay.com/get/gfb84f5b657af9829d7e89ab4825f4032406de40109d065e48632934cc1d14128_640.jpg",
-        "https://pixabay.com/get/g8a57cf3655f28c7bb399f13aaa009f0adf2c50f3a94d7c4bcfee8d8af3577c97_640.jpg",
-        "https://pixabay.com/get/ge1e400a79460cbb3aadcb4cf7b61c83f9eb107eac3eca625ad5b07f31a0c8c5b_640.jpg",
-        "https://pixabay.com/get/gd3732ef9bcd0afb966d82c951d1f9ce55cded42388a2e47c1559a5e6bb9c6f91_640.jpg",
-        "https://pixabay.com/get/g0b50e0b1464b4b8bb8c5e7a4f8d9a2230603b8a2b42e1a43abbdd79b6f4e9b57_640.jpg",
-    ]
-};
+    <script>
+        const imageSets = {
+            1: [
+                "G1_P1.jpeg",
+                "G1_P2.jpeg",
+                "G1_P3.jpeg",
+                "G1_P4.jpeg",
+                "G1_P5.jpeg",
+                "G1_P6.jpeg",
+                "G1_P7.jpeg",
+                "G1_P8.jpeg",
+                "G1_P9.jpeg",
+                "G1_P10.jpeg",
+                "G1_P11.jpeg",
+                "G1_P12.jpeg",
+                "G1_P13.jpeg",
+                "G1_P14.jpeg",
+                "G1_P15.jpeg",
+                "G1_P16.jpeg",
 
-document.querySelectorAll(".stack").forEach(stack => {
-    stack.addEventListener("click", () => {
-        const id = stack.getAttribute("data-stack");
-        showGrid(id);
-    });
-});
+            ],
+            2: [
+                "G2_P1.jpeg",
+                "G2_P2.jpeg",
+                "G2_P3.jpeg",
+                "G2_P4.jpeg",
+                "G2_P5.jpeg",
+                "G2_P6.jpeg",
+                "G2_P7.jpeg",
+                "G2_P8.jpeg",
+                "G2_P9.jpeg",
+                "G2_P10.jpeg",
+                "G2_P11.jpeg",
+                "G2_P12.jpeg",
+                "G2_P13.jpeg",
+            ],
+            3: [
+                "G3_P1.jpeg",
+                "G3_P2.jpeg",
+                "G3_P3.jpeg",
+                "G3_P4.jpeg",
+                "G3_P5.jpeg",
+                "G3_P6.jpeg",
+                "G3_P7.jpeg",
+                "G3_P8.jpeg",
+                "G3_P9.jpeg",
+                "G3_P10.jpeg",
+                "G3_P11.jpeg",
+                "G3_P12.jpeg",
+                "G3_P13.jpeg",
+                "G3_P14.jpeg",
+                "G3_P15.jpeg",
+                "G3_P16.jpeg",
 
-function showGrid(id) {
-    const grid = document.getElementById("grid-view");
-    const container = document.getElementById("grid-images");
-    container.innerHTML = "";
-    imageSets[id].forEach(img => {
-        container.innerHTML += `<img src="${img}">`;
-    });
-    grid.classList.remove("hidden");
-}
+            ]
+        };
 
-document.getElementById("close-grid").onclick = () => {
-    document.getElementById("grid-view").classList.add("hidden");
-};
-</script>
+        document.querySelectorAll(".stack").forEach(stack => {
+            stack.addEventListener("click", () => {
+                const id = stack.getAttribute("data-stack");
+                showGrid(id);
+            });
+        });
+
+        function showGrid(id) {
+            const grid = document.getElementById("grid-view");
+            const container = document.getElementById("grid-images");
+            container.innerHTML = "";
+            imageSets[id].forEach(img => {
+                container.innerHTML += `<img src="${img}">`;
+            });
+            grid.classList.remove("hidden");
+        }
+
+        document.getElementById("close-grid").onclick = () => {
+            document.getElementById("grid-view").classList.add("hidden");
+        };
+    </script>
 
     <script>
         // Animation pour la navigation
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
@@ -673,15 +283,15 @@ document.getElementById("close-grid").onclick = () => {
                 header.classList.remove('scrolled');
             }
         });
-        
+
         // Animation fluide pour les ancres
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -693,4 +303,5 @@ document.getElementById("close-grid").onclick = () => {
         });
     </script>
 </body>
+
 </html>
